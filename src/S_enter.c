@@ -144,7 +144,8 @@ vbasis(double **x, double *t, int n, int d, int *ind, int m, int p, double *X)
     pcall = CDR(pcall);
     SETCAR(pcall, allocVector(REALSXP, d));
     memmove(REAL(CAR(pcall)), t, d * sizeof(double));
-    for (int i = 0 ; i < d ; i++) {
+    int i;
+    for (i = 0 ; i < d ; i++) {
 	pcall = CDR(pcall);
 	SETCAR(pcall, allocVector(REALSXP, n));
 	memmove(REAL(CAR(pcall)), x[i], n * sizeof(double));
